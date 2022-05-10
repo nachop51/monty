@@ -11,7 +11,7 @@ void pop(stack_t **head, unsigned int lineCount)
 	if (!*head)
 	{
 		dprintf(2, "L%d: can't pop an empty stack\n", lineCount);
-		argument = -3;
+		head = NULL;
 		return;
 	}
 	if (aux->next == NULL)

@@ -60,5 +60,9 @@ void pint(stack_t **head, unsigned int line);
 void pop(stack_t **head, unsigned int lineCount);
 void nop(stack_t **head, unsigned int lineCount);
 void add(stack_t **head, unsigned int lineCount);
+void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount);
+int checkFunc(char *command);
+void free_all(stack_t **head, FILE *fd, char *buffer);
+int _isdigit(char *checkArg);
 
 #endif /* MONTY_H */

@@ -42,10 +42,13 @@ void openFile(char *filename, instruction_t instruction[])
 			continue;
 		}
 		checkArg = strtok(NULL, " ");
-		if (checkArg != NULL)
+		if (checkArg != NULL && _isdigit(checkArg) == 1)
 			argument = atoi(checkArg);
 		else
-			argument = -1;
+		{
+			if (checkFunc(command) == 1)
+				printErr(&head, fd, buffer, lineCount);
+		}
 		head = cFunc(&head, lineCount, instruction, command);
 		if (argument == -2)
 		{
@@ -56,9 +59,48 @@ void openFile(char *filename, instruction_t instruction[])
 			free(buffer), closeFile(fd), exit(EXIT_FAILURE);
 		lineCount++;
 	}
-	free_list(head);
+	free_all(&head, fd, buffer);
+}
+
+int _isdigit(char *checkArg)
+{
+	if (checkArg[0] == '-')
+	{
+		if (checkArg[1] >= 48 && checkArg[1] <= 57)
+		{
+			return (1);
+		}
+		return (0);
+	}
+	else if (checkArg[0] >= 48 && checkArg[0] <= 57)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+void free_all(stack_t **head, FILE *fd, char *buffer)
+{
+	free_list(*head);
 	closeFile(fd);
 	free(buffer);
+}
+
+void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount)
+{
+	dprintf(2, "L%d: usage: push integer\n", lineCount);
+	free_all(head, fd, buffer);
+	exit(EXIT_FAILURE);
+}
+
+int checkFunc(char *command)
+{
+	if (strcmp(command, "push") == 0)
+		return (1);
+	return (0);
 }
 
 void closeFile(FILE *fd)
@@ -81,8 +123,6 @@ stack_t *cFunc(stack_t **h, unsigned int line, instruction_t inst[], char *cmd)
 		if (strcmp(inst[i].opcode, cmd) == 0)
 		{
 			inst[i].f(h, line);
-			if (argument == -3)
-				return (NULL);
 			return (*h);
 		}
 	}
