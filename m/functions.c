@@ -2,11 +2,7 @@
 
 void push(stack_t **head, unsigned int line)
 {
-	if (argument == -1)
-	{
-		dprintf(2, "L%d: usage: push integer\n", line);
-		exit(EXIT_FAILURE);
-	}
+	line = line;
 	add_node_end(head);
 }
 
