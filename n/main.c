@@ -9,9 +9,7 @@ int main(int ac, char *av[])
 		exit(EXIT_FAILURE);
 	}
 	else
-	{
 		instructions(av[1]);
-	}
 	return (0);
 }
 
@@ -32,14 +30,11 @@ void openFile(char *filename, instruction_t instruction[])
 	}
 	while (1)
 	{
-		chars = getline(&buffer, &n, fd); /*Primera linea*/
+		chars = getline(&buffer, &n, fd);
 		if (buffer[chars - 1] == '\n')
 			buffer[chars - 1] = '\0';
 		if (chars == EOF)
-		{
-			free(buffer);
 			break;
-		}
 		command = strtok(buffer, " ");
 		if (command == NULL)
 		{
@@ -52,10 +47,13 @@ void openFile(char *filename, instruction_t instruction[])
 		else
 			argument = -1;
 		head = cFunc(&head, lineCount, instruction, command);
+		if (head == NULL)
+			free(buffer), closeFile(fd), exit(EXIT_FAILURE);
 		lineCount++;
 	}
 	free_list(head);
 	closeFile(fd);
+	free(buffer);
 }
 
 void closeFile(FILE *fd)
@@ -78,6 +76,10 @@ stack_t *cFunc(stack_t **h, unsigned int line, instruction_t inst[], char *cmd)
 		if (strcmp(inst[i].opcode, cmd) == 0)
 		{
 			inst[i].f(h, line);
+			if (argument == -3)
+			{
+				return (NULL);
+			}
 			return (*h);
 		}
 	}

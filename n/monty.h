@@ -57,5 +57,6 @@ stack_t *add_node_end(stack_t **head);
 void pint(stack_t **head, unsigned int line);
 void pall(stack_t **head, unsigned int line);
 void closeFile(FILE *fd);
+void pop(stack_t **head, unsigned int lineCount);
 
 #endif /* MONTY_H */
