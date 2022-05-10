@@ -8,7 +8,7 @@ void pint(stack_t **head, unsigned int lineCount)
 
 	if (*head == NULL)
 	{
-		printf("L%d: can't pint, stack empty\n", lineCount);
+		dprintf(2, "L%d: can't pint, stack empty\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
 	list = *head;

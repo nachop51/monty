@@ -48,8 +48,15 @@ typedef struct instruction_s
 
 /* Functions */
 
-void *instructions(char *filename);
-void *openFile(char *filename, instruction_t instruction[]);
-void *callFunction(stack_t **head, int line, instruction_t inst[], char *cmd);
+void instructions(char *filename);
+void openFile(char *filename, instruction_t instruction[]);
+stack_t *cFunc(stack_t **, unsigned int, instruction_t[], char *);
+void push(stack_t **head, unsigned int line);
+void free_list(stack_t *head);
+stack_t *add_node_end(stack_t **head);
+void pint(stack_t **head, unsigned int line);
+void pall(stack_t **head, unsigned int line);
+void closeFile(FILE *fd);
+void pop(stack_t **head, unsigned int lineCount);
 
 #endif /* MONTY_H */

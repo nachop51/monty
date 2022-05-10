@@ -4,13 +4,14 @@
  * instructions - Struct initialization
  * @filename: Name of the file
  */
-void *instructions(char *filename)
+void instructions(char *filename)
 {
 	instruction_t instruction[] = {
 		{"push", push},
 		{"pint", pint},
+		{"pall", pall},
 		{"pop", pop},
-		{"swap", swap},
+		/*{"swap", swap},
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
@@ -20,7 +21,7 @@ void *instructions(char *filename)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
-		{"rotr", rotr},
+		{"rotr", rotr},*/
 		{NULL, NULL}};
-	openfile(filename, instruction);
+	openFile(filename, instruction);
 }
