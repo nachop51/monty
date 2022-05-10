@@ -15,10 +15,9 @@ void instructions(char *filename)
 		{"add", add},
 		{"sub", sub},
 		{"div", _div},
-		/*{"nop", nop},
 		{"mul", mul},
 		{"mod", mod},
-		{"pchar", pchar},
+		/*{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},*/
