@@ -35,7 +35,7 @@ void openFile(char *filename, instruction_t instruction[])
 		chars = getline(&buffer, &n, fd); /*Primera linea*/
 		if (buffer[chars - 1] == '\n')
 			buffer[chars - 1] = '\0';
-		if (chars == -1)
+		if (chars == EOF)
 		{
 			free(buffer);
 			break;
@@ -51,13 +51,25 @@ void openFile(char *filename, instruction_t instruction[])
 			argument = atoi(checkArg);
 		else
 			argument = -1;
-		head = callFunction(&head, lineCount, instruction, command);
+		head = cFunc(&head, lineCount, instruction, command);
 		lineCount++;
 	}
 	free_list(head);
+	closeFile(fd);
 }
 
-stack_t *callFunction(stack_t **h, unsigned int line, instruction_t inst[], char *cmd)
+void closeFile(FILE *fd)
+{
+	int i = 0;
+
+	i = fclose(fd);
+	if (i != 0)
+	{
+		dprintf(2, "Can't close file\n");
+	}
+}
+
+stack_t *cFunc(stack_t **h, unsigned int line, instruction_t inst[], char *cmd)
 {
 	int i = 0;
 

@@ -10,9 +10,11 @@ void pall(stack_t **head, unsigned int line)
 	stack_t *h = *head;
 
 	line = line;
+	while (h->next)
+		h = h->next;
 	while (h)
 	{
 		printf("%d\n", h->n);
-		h = h->next;
+		h = h->prev;
 	}
 }
