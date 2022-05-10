@@ -19,7 +19,8 @@ void openFile(char *filename, instruction_t instruction[])
 {
 	size_t n = 0;
 	stack_t *head = NULL;
-	int chars = 0, lineCount = 1;
+	unsigned int lineCount = 1;
+	int chars = 0;
 	char *buffer = NULL, *checkArg, *command;
 	FILE *fd;
 
@@ -39,27 +40,24 @@ void openFile(char *filename, instruction_t instruction[])
 			free(buffer);
 			break;
 		}
-		printf("chars:%d\nbuffer:%s.\n", chars, buffer);
 		command = strtok(buffer, " ");
 		if (command == NULL)
 		{
 			lineCount++;
 			continue;
 		}
-		printf("\ntoken:%s.\n\n", command);
 		checkArg = strtok(NULL, " ");
 		if (checkArg != NULL)
 			argument = atoi(checkArg);
 		else
 			argument = -1;
-		callFunction(&head, lineCount, instruction, command);
+		head = callFunction(&head, lineCount, instruction, command);
 		lineCount++;
 	}
 	free_list(head);
-	return;
 }
 
-void *callFunction(stack_t **head, int line, instruction_t inst[], char *cmd)
+stack_t *callFunction(stack_t **h, unsigned int line, instruction_t inst[], char *cmd)
 {
 	int i = 0;
 
@@ -67,7 +65,8 @@ void *callFunction(stack_t **head, int line, instruction_t inst[], char *cmd)
 	{
 		if (strcmp(inst[i].opcode, cmd) == 0)
 		{
-			inst[i].f(&head, line);
+			inst[i].f(h, line);
+			return (*h);
 		}
 	}
 	if (inst[i].opcode == NULL)
@@ -75,4 +74,5 @@ void *callFunction(stack_t **head, int line, instruction_t inst[], char *cmd)
 		dprintf(2, "L%d: unknown instruction %s\n", line, cmd);
 		exit(EXIT_FAILURE);
 	}
+	return (NULL);
 }
