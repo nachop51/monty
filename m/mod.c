@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * _div - divides the second top element of the stack by the top element.
+ * mod - divides the second top element of the stack by the top element.
  * @head: linked list.
  * @lineCount: line counter.
  */
-void _div(stack_t **head, unsigned int lineCount)
+void mod(stack_t **head, unsigned int lineCount)
 {
 	stack_t *list = *head;
 	int result = 0;

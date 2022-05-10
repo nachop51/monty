@@ -67,4 +67,8 @@ void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount);
 int checkFunc(char *command);
 void free_all(stack_t **head, FILE *fd, char *buffer);
 int _isdigit(char *checkArg);
+stack_t *add_node_start(stack_t **head);
+void rotl(stack_t **head, unsigned int lineCount);
+void mod(stack_t **head, unsigned int lineCount);
+void mul(stack_t **head, unsigned int lineCount);
 #endif /* MONTY_H */
