@@ -48,6 +48,11 @@ void openFile(char *filename, instruction_t instruction[])
 		{
 			if (checkFunc(command) == 1)
 				printErr(&head, fd, buffer, lineCount);
+			else if (checkFunc(command) == 2)
+			{
+				lineCount++;
+				continue;
+			}
 		}
 		head = cFunc(&head, lineCount, instruction, command);
 		if (argument == -2)
@@ -100,6 +105,8 @@ int checkFunc(char *command)
 {
 	if (strcmp(command, "push") == 0)
 		return (1);
+	if (strcmp(command, "nop") == 0)
+		return (2);
 	return (0);
 }
 

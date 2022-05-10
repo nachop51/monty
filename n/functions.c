@@ -1,8 +1,7 @@
 #include "monty.h"
 
-void push(stack_t **head, unsigned int line)
+void push(stack_t **head, __attribute__((unused)) unsigned int line)
 {
-	line = line;
 	add_node_end(head);
 }
 

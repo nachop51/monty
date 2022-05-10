@@ -1,4 +1,5 @@
-push 1a
+push -10a
+push -10
 push -2
 push 2
 push -3
