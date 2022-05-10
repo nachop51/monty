@@ -17,10 +17,10 @@ void instructions(char *filename)
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
-		/*{"pchar", pchar},
-		{"pstr", pstr},
+		{"pchar", pchar},
+		/*{"pstr", pstr},*/
 		{"rotl", rotl},
-		{"rotr", rotr},*/
+		/*{"rotr", rotr},*/
 		{NULL, NULL}};
 	openFile(filename, instruction);
 }

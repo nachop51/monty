@@ -12,14 +12,16 @@ void _div(stack_t **head, unsigned int lineCount)
 	if (*head == NULL || list->next == NULL)
 	{
 		dprintf(2, "L%d: can't div, stack too short\n", lineCount);
-		exit(EXIT_FAILURE);
+		head = NULL;
+		return;
 	}
 	while (list->next->next != NULL)
 		list = list->next;
 	if (list->next->n == 0)
 	{
 		dprintf(2, "L%d: division by zero\n", lineCount);
-		exit(EXIT_FAILURE);
+		head = NULL;
+		return;
 	}
 	result = list->n / list->next->n;
 	list->n = result;
