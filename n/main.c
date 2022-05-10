@@ -107,6 +107,8 @@ int checkFunc(char *command)
 		return (1);
 	if (strcmp(command, "nop") == 0)
 		return (2);
+	if (command[0] == '#')
+		return (2);
 	return (0);
 }
 
