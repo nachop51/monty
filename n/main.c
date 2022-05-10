@@ -47,6 +47,11 @@ void openFile(char *filename, instruction_t instruction[])
 		else
 			argument = -1;
 		head = cFunc(&head, lineCount, instruction, command);
+		if (argument == -2)
+		{
+			argument = -1, lineCount++;
+			continue;
+		}
 		if (head == NULL)
 			free(buffer), closeFile(fd), exit(EXIT_FAILURE);
 		lineCount++;
@@ -77,9 +82,7 @@ stack_t *cFunc(stack_t **h, unsigned int line, instruction_t inst[], char *cmd)
 		{
 			inst[i].f(h, line);
 			if (argument == -3)
-			{
 				return (NULL);
-			}
 			return (*h);
 		}
 	}
