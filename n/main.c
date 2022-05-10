@@ -1,9 +1,8 @@
 #include "monty.h"
+int argument = -1;
 
 int main(int ac, char *av[])
 {
-	stack_t *list;
-
 	if (ac != 2)
 	{
 		dprintf(2, "USAGE: monty file\n");
@@ -11,18 +10,17 @@ int main(int ac, char *av[])
 	}
 	else
 	{
-		list = openfile(av[1]);
-		list = list;
+		instructions(av[1]);
 	}
 	return (0);
 }
 
-stack_t *openfile(char *filename)
+void openFile(char *filename, instruction_t instruction[])
 {
 	size_t n = 0;
-	stack_t *list = NULL;
-	int chars = 0;
-	char *buffer = NULL, *token;
+	stack_t *head = NULL;
+	int chars = 0, lineCount = 1;
+	char *buffer = NULL, *checkArg, *command;
 	FILE *fd;
 
 	fd = fopen(filename, "r");
@@ -42,8 +40,38 @@ stack_t *openfile(char *filename)
 			break;
 		}
 		printf("chars:%d\nbuffer:%s.\n", chars, buffer);
-		token = strtok(buffer, " ");
-		printf("\ntoken:%s.\n\n", token);
+		command = strtok(buffer, " ");
+		if (command == NULL)
+		{
+			lineCount++;
+			continue;
+		}
+		printf("\ntoken:%s.\n\n", command);
+		checkArg = strtok(NULL, " ");
+		if (checkArg != NULL)
+			argument = atoi(checkArg);
+		else
+			argument = -1;
+		callFunction(&head, lineCount, instruction, command);
+		lineCount++;
 	}
-	return (list);
+	return;
+}
+
+void *callFunction(stack_t **head, int line, instruction_t inst[], char *cmd)
+{
+	int i = 0;
+
+	for (i = 0; inst[i].opcode; i++)
+	{
+		if (strcmp(inst[i].opcode, cmd) == 0)
+		{
+			inst[i].f(&head, line);
+		}
+	}
+	if (inst[i].opcode == NULL)
+	{
+		dprintf(2, "L%d: unknown instruction %s\n", line, cmd);
+		exit(EXIT_FAILURE);
+	}
 }
