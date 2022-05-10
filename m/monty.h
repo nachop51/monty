@@ -60,5 +60,6 @@ void closeFile(FILE *fd);
 void pop(stack_t **head, unsigned int lineCount);
 void swap(stack_t **head, unsigned int lineCount);
 void add(stack_t **head, unsigned int lineCount);
-
+void sub(stack_t **head, unsigned int lineCount);
+void _div(stack_t **head, unsigned int lineCount);
 #endif /* MONTY_H */
