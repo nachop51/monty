@@ -11,6 +11,7 @@ void instructions(char *filename)
 		{"pint", pint},
 		{"pall", pall},
 		{"pop", pop},
+		{"nop", nop},
 		/*{"swap", swap},
 		{"add", add},
 		{"nop", nop},

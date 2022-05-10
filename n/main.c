@@ -31,10 +31,10 @@ void openFile(char *filename, instruction_t instruction[])
 	while (1)
 	{
 		chars = getline(&buffer, &n, fd);
-		if (buffer[chars - 1] == '\n')
-			buffer[chars - 1] = '\0';
 		if (chars == EOF)
 			break;
+		if (buffer[chars - 1] == '\n')
+			buffer[chars - 1] = '\0';
 		command = strtok(buffer, " ");
 		if (command == NULL)
 		{
