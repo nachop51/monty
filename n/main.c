@@ -55,6 +55,7 @@ void openFile(char *filename, instruction_t instruction[])
 		callFunction(&head, lineCount, instruction, command);
 		lineCount++;
 	}
+	free_list(head);
 	return;
 }
 
