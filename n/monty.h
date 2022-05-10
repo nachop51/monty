@@ -1,10 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-/* Global var */
-
-extern int argument;
-
 /* Libraries */
 
 #include <stdio.h>
@@ -46,30 +42,41 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Global var */
+
+typedef struct global_s
+{
+	int argument;
+	int mode;
+} global_t;
+extern global_t glob;
+
 /* Functions */
 
-void instructions(char *filename);
-void openFile(char *filename, instruction_t instruction[]);
 void closeFile(FILE *fd);
+int checkFunc(char *command);
+int _isdigit(char *checkArg);
 void free_list(stack_t *head);
-stack_t *cFunc(stack_t **, unsigned int, instruction_t[], char *);
+void instructions(char *filename);
 stack_t *add_node_end(stack_t **head);
-void push(stack_t **head, unsigned int line);
-void pall(stack_t **head, unsigned int line);
-void pint(stack_t **head, unsigned int line);
+void delete_first_node(stack_t **head);
+stack_t *add_node_start(stack_t **head);
+void mod(stack_t **head, unsigned int lineCount);
 void pop(stack_t **head, unsigned int lineCount);
-void pchar(stack_t **head, unsigned int lineCount);
-void swap(stack_t **head, unsigned int lineCount);
+void mul(stack_t **head, unsigned int lineCount);
 void add(stack_t **head, unsigned int lineCount);
 void sub(stack_t **head, unsigned int lineCount);
+void pint(stack_t **head, unsigned int lineCount);
+void pall(stack_t **head, unsigned int lineCount);
+void push(stack_t **head, unsigned int lineCount);
+void swap(stack_t **head, unsigned int lineCount);
 void _div(stack_t **head, unsigned int lineCount);
-void mul(stack_t **head, unsigned int lineCount);
-void mod(stack_t **head, unsigned int lineCount);
 void rotl(stack_t **head, unsigned int lineCount);
-stack_t *add_node_start(stack_t **head);
-void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount);
-int checkFunc(char *command);
+void rotr(stack_t **head, unsigned int lineCount);
+void pchar(stack_t **head, unsigned int lineCount);
 void free_all(stack_t **head, FILE *fd, char *buffer);
-int _isdigit(char *checkArg);
+void openFile(char *filename, instruction_t instruction[]);
+stack_t *cFunc(stack_t **, unsigned int, instruction_t[], char *);
+void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount);
 
 #endif /* MONTY_H */

@@ -20,7 +20,7 @@ void instructions(char *filename)
 		{"pchar", pchar},
 		/*{"pstr", pstr},*/
 		{"rotl", rotl},
-		/*{"rotr", rotr},*/
+		{"rotr", rotr},
 		{NULL, NULL}};
 	openFile(filename, instruction);
 }

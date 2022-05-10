@@ -1,5 +1,5 @@
 #include "monty.h"
-int argument = -1;
+global_t glob = {0, 0};
 
 int main(int ac, char *av[])
 {
@@ -43,7 +43,7 @@ void openFile(char *filename, instruction_t instruction[])
 		}
 		checkArg = strtok(NULL, " ");
 		if (checkArg != NULL && _isdigit(checkArg) == 1)
-			argument = atoi(checkArg);
+			glob.argument = atoi(checkArg);
 		else
 		{
 			if (checkFunc(command) == 1)

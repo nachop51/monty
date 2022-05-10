@@ -19,7 +19,7 @@ stack_t *add_node_end(stack_t **head)
 	new = malloc(sizeof(stack_t));
 	if (!new)
 		return (NULL);
-	new->n = argument;
+	new->n = glob.argument;
 	new->next = NULL;
 	if (!*head)
 	{
@@ -65,4 +65,20 @@ stack_t *add_node_start(stack_t **head)
 		*head = new_node;
 		return (new_node);
 	}
+}
+
+/**
+ * pop - deletes the node at index of a linked list
+ * @head: head of the linked list.
+ * @lineCount: node to be deleted.
+ */
+void delete_first_node(stack_t **head)
+{
+	stack_t *current_node = *head;
+
+	*head = current_node->next;
+	if (current_node->next)
+		current_node->next->prev = NULL;
+	current_node->next = NULL;
+	free(current_node);
 }
