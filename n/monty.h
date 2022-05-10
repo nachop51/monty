@@ -50,14 +50,15 @@ typedef struct instruction_s
 
 void instructions(char *filename);
 void openFile(char *filename, instruction_t instruction[]);
-stack_t *cFunc(stack_t **, unsigned int, instruction_t[], char *);
-void push(stack_t **head, unsigned int line);
-void free_list(stack_t *head);
-stack_t *add_node_end(stack_t **head);
-void pint(stack_t **head, unsigned int line);
-void pall(stack_t **head, unsigned int line);
 void closeFile(FILE *fd);
+void free_list(stack_t *head);
+stack_t *cFunc(stack_t **, unsigned int, instruction_t[], char *);
+stack_t *add_node_end(stack_t **head);
+void push(stack_t **head, unsigned int line);
+void pall(stack_t **head, unsigned int line);
+void pint(stack_t **head, unsigned int line);
 void pop(stack_t **head, unsigned int lineCount);
 void nop(stack_t **head, unsigned int lineCount);
+void add(stack_t **head, unsigned int lineCount);
 
 #endif /* MONTY_H */
