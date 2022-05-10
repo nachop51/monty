@@ -48,6 +48,8 @@ typedef struct instruction_s
 
 /* Functions */
 
-stack_t *openfile(char *filename);
+void *instructions(char *filename);
+void *openFile(char *filename, instruction_t instruction[]);
+void *callFunction(stack_t **head, int line, instruction_t inst[], char *cmd);
 
 #endif /* MONTY_H */
