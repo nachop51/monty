@@ -67,3 +67,19 @@ stack_t *add_node_start(stack_t **head)
 		return (new_node);
 	}
 }
+
+/**
+ * pop - deletes the node at index of a linked list
+ * @head: head of the linked list.
+ * @lineCount: node to be deleted.
+ */
+void delete_first_node(stack_t **head)
+{
+	stack_t *current_node = *head;
+
+	*head = current_node->next;
+	if (current_node->next)
+		current_node->next->prev = NULL;
+	current_node->next = NULL;
+	free(current_node);
+}

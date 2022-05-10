@@ -69,6 +69,8 @@ void free_all(stack_t **head, FILE *fd, char *buffer);
 int _isdigit(char *checkArg);
 stack_t *add_node_start(stack_t **head);
 void rotl(stack_t **head, unsigned int lineCount);
+void rotr(stack_t **head, unsigned int lineCount);
 void mod(stack_t **head, unsigned int lineCount);
 void mul(stack_t **head, unsigned int lineCount);
+void delete_first_node(stack_t **head);
 #endif /* MONTY_H */

@@ -18,9 +18,9 @@ void instructions(char *filename)
 		{"mul", mul},
 		{"mod", mod},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		/*{"pchar", pchar},
-		{"pstr", pstr},
-		{"rotr", rotr},*/
+		{"pstr", pstr},*/
 		{NULL, NULL}};
 	openFile(filename, instruction);
 }
