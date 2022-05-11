@@ -63,7 +63,7 @@ void openFile(char *filename, instruction_t instruction[])
 		head = cFunc(&head, lineCount, instruction, command);
 		if (flag == 0 && head == NULL)
 			free(buffer), closeFile(fd), exit(EXIT_FAILURE);
-		flag = 0, lineCount++;
+		flag = 0;
 	}
 	free_all(&head, fd, buffer);
 }

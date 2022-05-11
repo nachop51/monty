@@ -11,10 +11,7 @@ void pall(stack_t **head, unsigned int line)
 	stack_t *h = *head;
 
 	if (*head == NULL)
-	{
-		printf("\n");
 		return;
-	}
 	line = line;
 	while (h->next)
 		h = h->next;
