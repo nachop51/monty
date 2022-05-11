@@ -7,22 +7,18 @@
  */
 int _isdigit(char *checkArg)
 {
+	int i = 0;
+
 	if (checkArg[0] == '-')
+		i++;
+	while (checkArg[i])
 	{
-		if (checkArg[1] >= 48 && checkArg[1] <= 57)
-		{
-			return (1);
-		}
-		return (0);
+		if (checkArg[i] >= 48 && checkArg[i] <= 57)
+			i++;
+		else
+			return (0);
 	}
-	else if (checkArg[0] >= 48 && checkArg[0] <= 57)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (1);
 }
 
 /**
