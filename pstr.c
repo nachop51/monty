@@ -18,7 +18,7 @@ void pstr(stack_t **head, unsigned int lineCount)
 		aux = aux->next;
 	while (aux->prev)
 	{
-		if (aux->n <= 0 || aux->n > 255)
+		if (aux->n <= 0 || aux->n > 127)
 			break;
 		putchar(aux->n);
 		aux = aux->prev;
