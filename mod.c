@@ -20,8 +20,7 @@ void mod(stack_t **head, unsigned int lineCount)
 	if (list->next->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", lineCount);
-		head = NULL;
-		return;
+		exit(EXIT_FAILURE);
 	}
 	result = list->n % list->next->n;
 	list->n = result;
