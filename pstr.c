@@ -9,7 +9,7 @@ void pstr(stack_t **head, unsigned int lineCount)
 	stack_t *aux = *head;
 	(void)lineCount;
 
-	if (!*head)
+	if (*head == NULL)
 	{
 		putchar(10);
 		return;
