@@ -52,5 +52,7 @@ int checkFunc(char *command)
 		return (3);
 	if (strcmp(command, "pstr") == 0)
 		return (3);
+	if (strcmp(command, "pall") == 0)
+		return (3);
 	return (0);
 }
