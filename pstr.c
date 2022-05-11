@@ -9,14 +9,14 @@ void pstr(stack_t **head, unsigned int lineCount)
 	stack_t *aux = *head;
 	(void)lineCount;
 
-	if (*head == NULL)
+	if (!head || !*head)
 	{
 		putchar(10);
 		return;
 	}
 	while (aux->next)
 		aux = aux->next;
-	while (aux->prev)
+	while (aux)
 	{
 		if (aux->n <= 0 || aux->n > 127)
 			break;
