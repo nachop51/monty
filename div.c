@@ -12,8 +12,7 @@ void _div(stack_t **head, unsigned int lineCount)
 	if (*head == NULL || list->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", lineCount);
-		head = NULL;
-		return;
+		exit(EXIT_FAILURE);
 	}
 	while (list->next->next != NULL)
 		list = list->next;
