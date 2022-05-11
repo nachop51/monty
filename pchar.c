@@ -6,7 +6,7 @@ void pchar(stack_t **head, unsigned int lineCount)
 
 	if (!*head)
 	{
-		dprintf(2, "L%d: can't pchar, stack empty\n", lineCount);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", lineCount);
 		head = NULL;
 		return;
 	}
@@ -14,7 +14,7 @@ void pchar(stack_t **head, unsigned int lineCount)
 		aux = aux->next;
 	if (aux->n < 0 || aux->n > 255)
 	{
-		dprintf(2, "L%d: can't pchar, value out of range\n", lineCount);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", lineCount);
 		head = NULL;
 		return;
 	}

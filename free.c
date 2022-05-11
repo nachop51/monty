@@ -23,7 +23,7 @@ void closeFile(FILE *fd)
 	i = fclose(fd);
 	if (i != 0)
 	{
-		dprintf(2, "Can't close file\n");
+		fprintf(stderr, "Can't close file\n");
 	}
 }
 

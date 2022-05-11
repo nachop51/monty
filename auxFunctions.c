@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * _isdigit - Checks if a given string is a digit or not
+ * @checkArg:
+ * Return: 1 if succeed
+ */
 int _isdigit(char *checkArg)
 {
 	if (checkArg[0] == '-')
@@ -22,7 +27,7 @@ int _isdigit(char *checkArg)
 
 void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount)
 {
-	dprintf(2, "L%d: usage: push integer\n", lineCount);
+	fprintf(stderr, "L%d: usage: push integer\n", lineCount);
 	free_all(head, fd, buffer);
 	exit(EXIT_FAILURE);
 }

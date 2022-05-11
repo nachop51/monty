@@ -10,7 +10,7 @@ void mul(stack_t **head, unsigned int lineCount)
 
 	if (*head == NULL || list->next == NULL)
 	{
-		dprintf(2, "L%d: can't mul, stack too short\n", lineCount);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
 	while (list->next->next != NULL)

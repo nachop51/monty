@@ -11,7 +11,7 @@ int main(int ac, char *av[])
 {
 	if (ac != 2)
 	{
-		dprintf(2, "USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -36,7 +36,7 @@ void openFile(char *filename, instruction_t instruction[])
 	fd = fopen(filename, "r");
 	if (!fd)
 	{
-		dprintf(2, "Error: Can't open file %s\n", filename);
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 	for (; 1; lineCount++)

@@ -11,7 +11,7 @@ void _div(stack_t **head, unsigned int lineCount)
 
 	if (*head == NULL || list->next == NULL)
 	{
-		dprintf(2, "L%d: can't div, stack too short\n", lineCount);
+		fprintf(stderr, "L%d: can't div, stack too short\n", lineCount);
 		head = NULL;
 		return;
 	}
@@ -19,7 +19,7 @@ void _div(stack_t **head, unsigned int lineCount)
 		list = list->next;
 	if (list->next->n == 0)
 	{
-		dprintf(2, "L%d: division by zero\n", lineCount);
+		fprintf(stderr, "L%d: division by zero\n", lineCount);
 		head = NULL;
 		return;
 	}

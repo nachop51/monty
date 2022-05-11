@@ -28,7 +28,7 @@ void instructions(char *filename)
 }
 
 /**
- * cFun - Calls the corresponding function.
+ * cFunc - Calls the corresponding function.
  * @h: Linked list.
  * @line: Number of the line.
  * @inst: Struct of functions.
@@ -49,7 +49,7 @@ stack_t *cFunc(stack_t **h, unsigned int line, instruction_t inst[], char *cmd)
 	}
 	if (inst[i].opcode == NULL)
 	{
-		dprintf(2, "L%d: unknown instruction %s\n", line, cmd);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line, cmd);
 		exit(EXIT_FAILURE);
 	}
 	return (NULL);
