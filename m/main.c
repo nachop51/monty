@@ -1,5 +1,5 @@
 #include "monty.h"
-int argument = -1;
+global_t glob = {0, 0};
 
 int main(int ac, char *av[])
 {
@@ -17,7 +17,7 @@ void openFile(char *filename, instruction_t instruction[])
 {
 	size_t n = 0;
 	stack_t *head = NULL;
-	unsigned int lineCount = 1;
+	unsigned int lineCount = 1, flag = 0;
 	int chars = 0;
 	char *buffer = NULL, *checkArg, *command;
 	FILE *fd;
@@ -43,21 +43,23 @@ void openFile(char *filename, instruction_t instruction[])
 		}
 		checkArg = strtok(NULL, " ");
 		if (checkArg != NULL && _isdigit(checkArg) == 1)
-			argument = atoi(checkArg);
+			glob.argument = atoi(checkArg);
 		else
 		{
 			if (checkFunc(command) == 1)
 				printErr(&head, fd, buffer, lineCount);
+			else if (checkFunc(command) == 2)
+			{
+				lineCount++;
+				continue;
+			}
+			else if (checkFunc(command) == 3)
+				flag++;
 		}
 		head = cFunc(&head, lineCount, instruction, command);
-		if (argument == -2)
-		{
-			argument = -1, lineCount++;
-			continue;
-		}
-		if (head == NULL)
+		if (flag == 0 && head == NULL)
 			free(buffer), closeFile(fd), exit(EXIT_FAILURE);
-		lineCount++;
+		flag = 0, lineCount++;
 	}
 	free_all(&head, fd, buffer);
 }
@@ -100,6 +102,18 @@ int checkFunc(char *command)
 {
 	if (strcmp(command, "push") == 0)
 		return (1);
+	if (strcmp(command, "nop") == 0)
+		return (2);
+	if (command[0] == '#')
+		return (2);
+	if (strcmp(command, "rotl") == 0)
+		return (3);
+	if (strcmp(command, "rotr") == 0)
+		return (3);
+	if (strcmp(command, "queue") == 0)
+		return (3);
+	if (strcmp(command, "stack") == 0)
+		return (3);
 	return (0);
 }
 

@@ -1,15 +1,44 @@
 #include "monty.h"
 
-void push(stack_t **head, unsigned int line)
+void push(stack_t **head, __attribute__((unused)) unsigned int line)
 {
-	line = line;
-	add_node_end(head);
+	if (glob.mode == 0)
+		add_node_end(head);
+	if (glob.mode == 1)
+		add_node(head);
+}
+
+/**
+ * add_dnodeint - Adds a new node at the beginning of a doubly linked list
+ * @head: Head of the linked list
+ *
+ * Return: A pointer to the new node
+ */
+stack_t *add_node(stack_t **head)
+{
+	stack_t *new;
+
+	if (!head)
+		return (NULL);
+	new = malloc(sizeof(stack_t));
+	if (!new)
+		return (NULL);
+	new->n = glob.argument;
+	new->prev = NULL;
+	if (*head)
+	{
+		(*head)->prev = new;
+		new->next = *head;
+	}
+	else
+		new->next = NULL;
+	*head = new;
+	return (new);
 }
 
 /**
  * add_node_end - Adds a new node at the end of a doubly linked list
  * @head: Head of the linked list
- * @n: Number
  *
  * Return: A pointer to the new node
  */
@@ -20,7 +49,7 @@ stack_t *add_node_end(stack_t **head)
 	new = malloc(sizeof(stack_t));
 	if (!new)
 		return (NULL);
-	new->n = argument;
+	new->n = glob.argument;
 	new->next = NULL;
 	if (!*head)
 	{

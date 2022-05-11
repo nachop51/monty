@@ -11,16 +11,32 @@ void instructions(char *filename)
 		{"pint", pint},
 		{"pall", pall},
 		{"pop", pop},
-		{"swap", swap},
 		{"add", add},
+		{"swap", swap},
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
+		{"queue", queue},
+		{"stack", stack},
+		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
-		/*{"pchar", pchar},
-		{"pstr", pstr},*/
 		{NULL, NULL}};
 	openFile(filename, instruction);
+}
+
+void queue(stack_t **head, unsigned int lineCount)
+{
+	(void)head;
+	(void)lineCount;
+	glob.mode = 1;
+}
+
+void stack(stack_t **head, unsigned int lineCount)
+{
+	(void)head;
+	(void)lineCount;
+	glob.mode = 0;
 }
