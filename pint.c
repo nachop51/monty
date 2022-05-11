@@ -1,6 +1,8 @@
 #include "monty.h"
 /**
- *
+ * pint - Prints the last integer of the stack
+ * @head: Linked list.
+ * @lineCount: Number of the line.
  */
 void pint(stack_t **head, unsigned int lineCount)
 {

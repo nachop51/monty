@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * _isdigit - Checks if a given string is a digit or not
- * @checkArg:
- * Return: 1 if succeed
+ * _isdigit - Checks if a given string is a digit or not.
+ * @checkArg: String to check.
+ * Return: 1 if is a digit, 0 if is not.
  */
 int _isdigit(char *checkArg)
 {
@@ -25,6 +25,13 @@ int _isdigit(char *checkArg)
 	}
 }
 
+/**
+ * printErr - Prints if there is an error and frees all things
+ * @head: Linked list.
+ * @fd: Pointer to a file.
+ * @buffer: Buffer.
+ * @lineCount: Number of the line.
+ */
 void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", lineCount);
@@ -32,6 +39,11 @@ void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * checkFunc - Checks for a function.
+ * @command: Command to check.
+ * Return: Depending of the function.
+ */
 int checkFunc(char *command)
 {
 	if (strcmp(command, "push") == 0)

@@ -1,7 +1,8 @@
 #include "monty.h"
 /**
- *
- *
+ * mul - Multiplicates the last two numbers of the stack.
+ * @head: Linked list.
+ * @lineCount: Number of the line.
  */
 void mul(stack_t **head, unsigned int lineCount)
 {

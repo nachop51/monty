@@ -1,7 +1,8 @@
 #include "monty.h"
 /**
- *
- *
+ * pstr - Prints all the integers like a char.
+ * @head: Linked list.
+ * @lineCount: Number of the line.
  */
 void pstr(stack_t **head, unsigned int lineCount)
 {

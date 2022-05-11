@@ -1,7 +1,8 @@
 #include "monty.h"
 /**
- *
- *
+ * rotl - Rotates the stack to the top.
+ * @head: Linked list.
+ * @lineCount: Number of the line.
  */
 void rotl(stack_t **head, unsigned int lineCount)
 {

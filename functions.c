@@ -4,7 +4,7 @@
  * @head: Linked list.
  * @lineCount: Number of the line.
  */
-void push(stack_t **head, __attribute__((unused)) unsigned int line)
+void push(stack_t **head, __attribute__((unused)) unsigned int lineCount)
 {
 	if (glob.mode == 0)
 		add_node_end(head);

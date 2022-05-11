@@ -16,6 +16,10 @@ void free_list(stack_t *head)
 	}
 }
 
+/**
+ * closeFile - Close a given file.
+ * @fd: Pointer to a file.
+ */
 void closeFile(FILE *fd)
 {
 	int i = 0;
@@ -27,6 +31,12 @@ void closeFile(FILE *fd)
 	}
 }
 
+/**
+ * free_all - Frees all things
+ * @head: Linked list.
+ * @fd: Pointer to a file.
+ * @buffer: Buffer.
+ */
 void free_all(stack_t **head, FILE *fd, char *buffer)
 {
 	free_list(*head);
