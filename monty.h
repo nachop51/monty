@@ -48,6 +48,7 @@ typedef struct instruction_s
  * struct global_s - Global structure
  * @argument: Argument
  * @mode: Indicates the behaviour of the program
+ * @pop: pop.
  */
 typedef struct global_s
 {
