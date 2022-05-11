@@ -46,7 +46,7 @@ void openFile(char *filename, instruction_t instruction[])
 			break;
 		if (buffer[chars - 1] == '\n')
 			buffer[chars - 1] = '\0';
-		command = strtok(buffer, " "), checkArg = strtok(NULL, " ");
+		command = strtok(buffer, "\t "), checkArg = strtok(NULL, "\t ");
 		if (command == NULL)
 			continue;
 		if (checkArg != NULL && _isdigit(checkArg) == 1)
