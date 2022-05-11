@@ -10,16 +10,16 @@
 #include <sys/types.h>
 #include <string.h>
 
-/* Struct */
+/* Structs */
 
 /**
- * struct stack_s - doubly linked list representation of a stack (or queue)
- * @n: integer
- * @prev: points to the previous element of the stack (or queue)
- * @next: points to the next element of the stack (or queue)
+ * struct stack_s - Doubly linked list representation of a stack (or queue).
+ * @n: Integer.
+ * @prev: Points to the previous element of the stack (or queue).
+ * @next: Points to the next element of the stack (or queue).
  *
- * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO
+ * Description: Doubly linked list node structure
+ * for stack, queues, LIFO, FIFO.
  */
 typedef struct stack_s
 {
@@ -44,6 +44,10 @@ typedef struct instruction_s
 
 /* Global var */
 
+/**
+ * struct global_s -
+ *
+ */
 typedef struct global_s
 {
 	int argument;

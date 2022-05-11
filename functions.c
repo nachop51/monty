@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * push - Pushes an element to the stack.
+ * @head: Linked list.
+ * @lineCount: Number of the line.
+ */
 void push(stack_t **head, __attribute__((unused)) unsigned int line)
 {
 	if (glob.mode == 0)
@@ -9,10 +13,9 @@ void push(stack_t **head, __attribute__((unused)) unsigned int line)
 }
 
 /**
- * add_dnodeint - Adds a new node at the beginning of a doubly linked list
- * @head: Head of the linked list
- *
- * Return: A pointer to the new node
+ * add_node - Adds a new node at the beginning of a doubly linked list.
+ * @head: Linked list.
+ * Return: A pointer to the new node.
  */
 stack_t *add_node(stack_t **head)
 {
@@ -37,10 +40,9 @@ stack_t *add_node(stack_t **head)
 }
 
 /**
- * add_node_end - Adds a new node at the end of a doubly linked list
- * @head: Head of the linked list
- *
- * Return: A pointer to the new node
+ * add_node_end - Adds a new node at the end of a doubly linked list.
+ * @head: Linked list.
+ * Return: A pointer to the new node.
  */
 stack_t *add_node_end(stack_t **head)
 {
@@ -66,10 +68,9 @@ stack_t *add_node_end(stack_t **head)
 }
 
 /**
- *  add_dnodeint - adds a new node at the beginning of a linked list.
- *  @head: head of the node.
- *  @n: value to be added to the new node.
- *  Return: the address of the new element, or NULL if it failed
+ * add_node_start - adds a new node at the beginning of a linked list.
+ * @head: Linked list.
+ * Return: the address of the new element, or NULL if it failed.
  */
 stack_t *add_node_start(stack_t **head)
 {
@@ -98,9 +99,8 @@ stack_t *add_node_start(stack_t **head)
 }
 
 /**
- * pop - deletes the node at index of a linked list
- * @head: head of the linked list.
- * @lineCount: node to be deleted.
+ * delete_first_node - deletes the first node of a linked list.
+ * @head: Linked list.
  */
 void delete_first_node(stack_t **head)
 {

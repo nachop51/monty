@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * free_dlistint - Frees a doubly linked list
- * @head: Linked list
+ * free_list - Frees a doubly linked list.
+ * @head: Linked list.
  */
 void free_list(stack_t *head)
 {
@@ -14,4 +14,22 @@ void free_list(stack_t *head)
 		head = head->next;
 		free(aux);
 	}
+}
+
+void closeFile(FILE *fd)
+{
+	int i = 0;
+
+	i = fclose(fd);
+	if (i != 0)
+	{
+		dprintf(2, "Can't close file\n");
+	}
+}
+
+void free_all(stack_t **head, FILE *fd, char *buffer)
+{
+	free_list(*head);
+	closeFile(fd);
+	free(buffer);
 }

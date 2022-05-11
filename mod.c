@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * mod - divides the second top element of the stack by the top element.
+ * mod -
  * @head: linked list.
  * @lineCount: line counter.
  */
