@@ -1,8 +1,9 @@
 #include "monty.h"
 
 /**
- * print_dlistint - Prints out the elements of a linked list
- * @h: Head of the linked list
+ * pall - Prints out the elements of a linked list
+ * @head: Head of the linked list
+ * @line: Number of the line.
  * Return: Length value
  */
 void pall(stack_t **head, unsigned int line)

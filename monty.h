@@ -45,8 +45,9 @@ typedef struct instruction_s
 /* Global var */
 
 /**
- * struct global_s -
- *
+ * struct global_s - Global structure
+ * @argument: Argument
+ * @mode: Indicates the behaviour of the program
  */
 typedef struct global_s
 {

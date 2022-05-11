@@ -1,7 +1,8 @@
 #include "monty.h"
 /**
- *
- *
+ * rotr - Rotates the stack to the bottom.
+ * @head: Linked list.
+ * @lineCount: Number of the line.
  */
 void rotr(stack_t **head, __attribute__((unused)) unsigned int lineCount)
 {

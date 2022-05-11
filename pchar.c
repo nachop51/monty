@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * pchar - Prints the last number of the stack in char
+ * @head: Linked list.
+ * @lineCount: Number of the line.
+ */
 void pchar(stack_t **head, unsigned int lineCount)
 {
 	stack_t *aux = *head;
