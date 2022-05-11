@@ -23,9 +23,6 @@ int _isdigit(char *checkArg)
 
 /**
  * printErr - Prints if there is an error and frees all things
- * @head: Linked list.
- * @fd: Pointer to a file.
- * @buffer: Buffer.
  * @lineCount: Number of the line.
  */
 void printErr(unsigned int lineCount)
