@@ -54,7 +54,7 @@ void openFile(char *filename, instruction_t instruction[])
 		else
 		{
 			if (checkFunc(command) == 1)
-				printErr(&head, fd, buffer, lineCount);
+				printErr(lineCount);
 			else if (checkFunc(command) == 2)
 				continue;
 			else if (checkFunc(command) == 3)

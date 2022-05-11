@@ -88,6 +88,6 @@ void queue(stack_t **head, unsigned int lineCount);
 void free_all(stack_t **head, FILE *fd, char *buffer);
 void openFile(char *filename, instruction_t instruction[]);
 stack_t *cFunc(stack_t **, unsigned int, instruction_t[], char *);
-void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount);
+void printErr(unsigned int lineCount);
 
 #endif /* MONTY_H */
