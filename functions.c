@@ -27,7 +27,7 @@ stack_t *add_node(stack_t **head)
 	if (!new)
 	{
 		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
+		return (NULL);
 	}
 	new->n = glob.argument;
 	new->prev = NULL;
@@ -55,7 +55,7 @@ stack_t *add_node_end(stack_t **head)
 	if (!new)
 	{
 		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
+		return (NULL);
 	}
 	new->n = glob.argument;
 	new->next = NULL;
@@ -88,7 +88,7 @@ stack_t *add_node_start(stack_t **head)
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
+		return (NULL);
 	}
 	new_node->next = NULL;
 	new_node->prev = NULL;
