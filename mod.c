@@ -12,7 +12,7 @@ void mod(stack_t **head, unsigned int lineCount)
 
 	if (*head == NULL || list->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", lineCount);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
 	while (list->next->next != NULL)
