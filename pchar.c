@@ -12,16 +12,14 @@ void pchar(stack_t **head, unsigned int lineCount)
 	if (!*head)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", lineCount);
-		head = NULL;
-		return;
+		exit(EXIT_FAILURE);
 	}
 	while (aux->next)
 		aux = aux->next;
 	if (aux->n <= 0 || aux->n > 255)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", lineCount);
-		head = NULL;
-		return;
+		exit(EXIT_FAILURE);
 	}
 	putchar(aux->n);
 	putchar(10);
