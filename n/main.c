@@ -54,9 +54,7 @@ void openFile(char *filename, instruction_t instruction[])
 				continue;
 			}
 			else if (checkFunc(command) == 3)
-			{
 				flag++;
-			}
 		}
 		head = cFunc(&head, lineCount, instruction, command);
 		if (flag == 0 && head == NULL)
@@ -111,6 +109,10 @@ int checkFunc(char *command)
 	if (strcmp(command, "rotl") == 0)
 		return (3);
 	if (strcmp(command, "rotr") == 0)
+		return (3);
+	if (strcmp(command, "queue") == 0)
+		return (3);
+	if (strcmp(command, "stack") == 0)
 		return (3);
 	return (0);
 }
