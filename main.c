@@ -9,13 +9,13 @@ global_t glob = {0, 0};
  */
 int main(int ac, char *av[])
 {
-	if (ac != 2)
+	if (ac == 2)
+		instructions(av[1]);
+	else
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	else
-		instructions(av[1]);
 	return (0);
 }
 
