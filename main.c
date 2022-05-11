@@ -47,7 +47,7 @@ void openFile(char *filename, instruction_t instruction[])
 		if (buffer[chars - 1] == '\n')
 			buffer[chars - 1] = '\0';
 		command = strtok(buffer, "\t "), checkArg = strtok(NULL, "\t ");
-		if (command == NULL)
+		if (command == NULL || command[0] == '#')
 			continue;
 		if (checkArg != NULL && _isdigit(checkArg) == 1)
 			glob.argument = atoi(checkArg);

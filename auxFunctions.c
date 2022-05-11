@@ -46,8 +46,6 @@ int checkFunc(char *command)
 		return (1);
 	if (strcmp(command, "nop") == 0)
 		return (2);
-	if (command[0] == '#')
-		return (2);
 	if (strcmp(command, "rotl") == 0)
 		return (3);
 	if (strcmp(command, "rotr") == 0)
