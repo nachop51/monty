@@ -20,7 +20,7 @@ void instructions(char *filename)
 		{"pchar", pchar},
 		{"queue", queue},
 		{"stack", stack},
-		/*{"pstr", pstr},*/
+		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
 		{NULL, NULL}};

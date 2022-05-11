@@ -28,20 +28,16 @@ void openFile(char *filename, instruction_t instruction[])
 		dprintf(2, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
-	while (1)
+	for (; 1; lineCount++)
 	{
 		chars = getline(&buffer, &n, fd);
 		if (chars == EOF)
 			break;
 		if (buffer[chars - 1] == '\n')
 			buffer[chars - 1] = '\0';
-		command = strtok(buffer, " ");
+		command = strtok(buffer, " "), checkArg = strtok(NULL, " ");
 		if (command == NULL)
-		{
-			lineCount++;
 			continue;
-		}
-		checkArg = strtok(NULL, " ");
 		if (checkArg != NULL && _isdigit(checkArg) == 1)
 			glob.argument = atoi(checkArg);
 		else
@@ -49,10 +45,7 @@ void openFile(char *filename, instruction_t instruction[])
 			if (checkFunc(command) == 1)
 				printErr(&head, fd, buffer, lineCount);
 			else if (checkFunc(command) == 2)
-			{
-				lineCount++;
 				continue;
-			}
 			else if (checkFunc(command) == 3)
 				flag++;
 		}

@@ -74,6 +74,7 @@ void swap(stack_t **head, unsigned int lineCount);
 void _div(stack_t **head, unsigned int lineCount);
 void rotl(stack_t **head, unsigned int lineCount);
 void rotr(stack_t **head, unsigned int lineCount);
+void pstr(stack_t **head, unsigned int lineCount);
 void pchar(stack_t **head, unsigned int lineCount);
 void stack(stack_t **head, unsigned int lineCount);
 void queue(stack_t **head, unsigned int lineCount);
