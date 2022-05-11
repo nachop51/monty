@@ -17,7 +17,7 @@ void pchar(stack_t **head, unsigned int lineCount)
 	}
 	while (aux->next)
 		aux = aux->next;
-	if (aux->n <= 0 || aux->n > 127)
+	if (aux->n <= 0 || aux->n > 255)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", lineCount);
 		head = NULL;
