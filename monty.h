@@ -53,6 +53,7 @@ typedef struct global_s
 {
 	int argument;
 	int mode;
+	int pop;
 } global_t;
 extern global_t glob;
 

@@ -30,7 +30,7 @@ int _isdigit(char *checkArg)
  */
 void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount)
 {
-	fprintf(stderr, "L%d: usage: push integer\n", lineCount);
+	fprintf(stderr, "L%u: usage: push integer\n", lineCount);
 	free_all(head, fd, buffer);
 	exit(EXIT_FAILURE);
 }

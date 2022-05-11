@@ -9,7 +9,7 @@ push 0
 push 108
 push 111
 push 134
-push 104
+push -1
 push 99
 push 83
 pstr

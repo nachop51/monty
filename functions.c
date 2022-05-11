@@ -10,6 +10,7 @@ void push(stack_t **head, __attribute__((unused)) unsigned int lineCount)
 		add_node_end(head);
 	if (glob.mode == 1)
 		add_node(head);
+	glob.pop = 0;
 }
 
 /**

@@ -1,5 +1,5 @@
 #include "monty.h"
-global_t glob = {0, 0};
+global_t glob = {0, 0, 0};
 
 /**
  * main - Monty interpreter.
@@ -61,7 +61,7 @@ void openFile(char *filename, instruction_t instruction[])
 				flag++;
 		}
 		head = cFunc(&head, lineCount, instruction, command);
-		if (flag == 0 && head == NULL)
+		if (flag == 0 && head == NULL && glob.pop == 0)
 			free(buffer), closeFile(fd), exit(EXIT_FAILURE);
 		flag = 0;
 	}

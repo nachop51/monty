@@ -8,17 +8,16 @@ void pop(stack_t **head, unsigned int lineCount)
 {
 	stack_t *aux = *head, *tmp;
 
-	if (!*head)
+	if (!head || !*head)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", lineCount);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", lineCount);
 		exit(EXIT_FAILURE);
 	}
 	if (aux->next == NULL)
 	{
-		(*head)->next = NULL;
-		(*head)->prev = NULL;
-		*head = NULL;
 		free(aux);
+		*head = NULL;
+		glob.pop = 1;
 	}
 	else
 	{
