@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * free_list - Frees a doubly linked list.
  * @head: Linked list.
