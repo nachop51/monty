@@ -22,7 +22,7 @@ int _isdigit(char *checkArg)
 }
 
 /**
- * printEr - Prints if there is an error and frees all things
+ * printErr - Prints if there is an error and frees all things
  * @lineCount: Number of the line.
  */
 void printErr(unsigned int lineCount)
