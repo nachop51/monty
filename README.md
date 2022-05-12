@@ -53,6 +53,6 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o monty
 
 ### Authors
 
-[Matías Martínez](https://github.com/MatiasMtz) & [Nacho Peralta](https://github.com/Nachop51) from Holberton School cohorte #17.
+[Matías Martínez](https://github.com/MatiasMtz) & [Nacho Peralta](https://github.com/Nachop51) from Holberton School cohort #17.
 
 
