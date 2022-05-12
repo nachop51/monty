@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * pint - Prints the last integer of the stack
+ * pint - Prints the last integer of the stack.
  * @head: Linked list.
  * @lineCount: Number of the line.
  */
