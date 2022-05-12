@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * swap - swaps the top two elements of the stack.
- * @head: linked list.
- * @lineCount: line counter.
+ * swap - Swaps the top two elements of the stack.
+ * @head: Linked list.
+ * @lineCount: Line counter.
  */
 void swap(stack_t **head, unsigned int lineCount)
 {
