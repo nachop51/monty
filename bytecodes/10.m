@@ -1,16 +1,7 @@
-queue
-push 1
-push 2
-push 3
-pall
-stack
-push 4
-push 5
-push 6
-pall
-add
-pall
-queue
-push 11111
-add
+push 10
+push 256
+push 32857325
+push -23 4
+push -4274
+push -0
 pall

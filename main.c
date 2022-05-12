@@ -44,9 +44,7 @@ void openFile(char *filename, instruction_t instruction[])
 		chars = getline(&buffer, &n, fd);
 		if (chars == EOF)
 			break;
-		if (buffer[chars - 1] == '\n')
-			buffer[chars - 1] = '\0';
-		command = strtok(buffer, "\t "), checkArg = strtok(NULL, "\t ");
+		command = strtok(buffer, " \t\n"), checkArg = strtok(NULL, " \t\n");
 		if (command == NULL || command[0] == '#')
 			continue;
 		if (checkArg != NULL && _isdigit(checkArg) == 1)
@@ -54,7 +52,7 @@ void openFile(char *filename, instruction_t instruction[])
 		else
 		{
 			if (checkFunc(command) == 1)
-				printErr(&head, fd, buffer, lineCount);
+				printErr(lineCount);
 			else if (checkFunc(command) == 2)
 				continue;
 			else if (checkFunc(command) == 3)

@@ -23,15 +23,11 @@ int _isdigit(char *checkArg)
 
 /**
  * printErr - Prints if there is an error and frees all things
- * @head: Linked list.
- * @fd: Pointer to a file.
- * @buffer: Buffer.
  * @lineCount: Number of the line.
  */
-void printErr(stack_t **head, FILE *fd, char *buffer, unsigned int lineCount)
+void printErr(unsigned int lineCount)
 {
 	fprintf(stderr, "L%u: usage: push integer\n", lineCount);
-	free_all(head, fd, buffer);
 	exit(EXIT_FAILURE);
 }
 
@@ -55,6 +51,8 @@ int checkFunc(char *command)
 	if (strcmp(command, "stack") == 0)
 		return (3);
 	if (strcmp(command, "pstr") == 0)
+		return (3);
+	if (strcmp(command, "pall") == 0)
 		return (3);
 	return (0);
 }
