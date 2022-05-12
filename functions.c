@@ -75,9 +75,9 @@ stack_t *add_node_end(stack_t **head)
 }
 
 /**
- * add_node_start - adds a new node at the beginning of a linked list.
+ * add_node_start - Adds a new node at the beginning of a linked list.
  * @head: Linked list.
- * Return: the address of the new element, or NULL if it failed.
+ * Return: The address of the new element, or NULL if it failed.
  */
 stack_t *add_node_start(stack_t **head)
 {
