@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * sub - subtracts the top element of the stack from the second.
- * @head: linked list.
- * @lineCount: line counter.
+ * sub - Subtracts the top element of the stack from the second.
+ * @head: Linked list.
+ * @lineCount: Line counter.
  */
 void sub(stack_t **head, unsigned int lineCount)
 {
