@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * dd - adds the top two elements of the stack.
+ * add - adds the top two elements of the stack.
  * @head: Linked list.
  * @lineCount: Number of the line.
  */
