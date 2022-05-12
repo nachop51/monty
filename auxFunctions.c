@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _isdigit - Checks if a given string is a digit or not.
+ * _isdigi - Checks if a given string is a digit or not.
  * @checkArg: String to check.
  * Return: 1 if is a digit, 0 if is not.
  */
