@@ -31,7 +31,7 @@ void closeFile(FILE *fd)
 }
 
 /**
- * free_all - Frees all things
+ * free_all - Frees all things.
  * @head: Linked list.
  * @fd: Pointer to a file.
  * @buffer: Buffer.
