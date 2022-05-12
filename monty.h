@@ -29,12 +29,12 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
+ * struct instruction_s - Opcode and its function.
+ * @opcode: The opcode.
+ * @f: Function to handle the opcode.
  *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO
+ * Description: Opcode and its function
+ * for stack, queues, LIFO, FIFO.
  */
 typedef struct instruction_s
 {
@@ -45,9 +45,9 @@ typedef struct instruction_s
 /* Global var */
 
 /**
- * struct global_s - Global structure
- * @argument: Argument
- * @mode: Indicates the behaviour of the program
+ * struct global_s - Global structure.
+ * @argument: Argument.
+ * @mode: Indicates the behaviour of the program.
  * @pop: pop.
  */
 typedef struct global_s
