@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * cFunc - Calls the corresponding function.
  * @h: Linked list.
