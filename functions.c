@@ -109,7 +109,7 @@ stack_t *add_node_start(stack_t **head)
 }
 
 /**
- * delete_first_node - deletes the first node of a linked list.
+ * delete_first_node - Deletes the first node of a linked list.
  * @head: Linked list.
  */
 void delete_first_node(stack_t **head)
