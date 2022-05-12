@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * pop - deletes the node at index of a linked list
+ * pop - Deletes the node at index of a linked list.
  * @head: head of the linked list.
  * @lineCount: node to be deleted.
  */
