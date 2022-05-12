@@ -1,7 +1,6 @@
 #include "monty.h"
-
 /**
- * pchar - Prints the last number of the stack in char
+ * pchar - Prints the last number of the stack in char.
  * @head: Linked list.
  * @lineCount: Number of the line.
  */
