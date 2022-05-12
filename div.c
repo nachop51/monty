@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _div - divides the second top element of the stack by the top element.
+ * _div - Divides the second top element of the stack by the top element.
  * @head: Linked list.
  * @lineCount: Number of the line.
  */
